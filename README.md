@@ -38,3 +38,48 @@ The system is optimized for the industry-standard **NSL-KDD dataset**, an enhanc
 ```bash
 git clone [https://github.com/your-username/Network-Intrusion-Detection-System.git](https://github.com/your-username/Network-Intrusion-Detection-System.git)
 cd Network-Intrusion-Detection-System
+```
+
+### 2. Add Dataset Files
+Download the NSL-KDD dataset files and place them directly in the root directory of this project:
+
+- `KDDTrain+.txt`
+
+- `KDDTest+.txt`
+
+### 3. Run the Detection Pipeline
+Execute the Python script to run data preparation, model training, and performance evaluation:
+```bash
+python nids_model.py
+```
+## 📈 Evaluation & Results
+When executed, the system outputs a comprehensive cryptographic traffic analysis evaluation block:
+
+### Configuration Modes
+You can toggle the `use_kdd_test_file` boolean variable at the top of the file to configure your evaluation strategy:
+
+`use_kdd_test_file = False` (Default): Splits training data into an 80% train / 20% validation split with class stratification to ensure clean distribution.
+
+`use_kdd_test_file = True`: Fits entirely on the training file and benchmarks performance against completely unknown attack types in the test text file.
+
+## Sample Output Metrics
+```
+--- Model Evaluation ---
+Accuracy: XX.XX%
+
+Classification Report:
+              precision    recall  f1-score   support
+
+  Normal (0)       0.99      0.99      0.99      XXXX
+  Attack (1)       0.99      0.99      0.99      XXXX
+
+------------------------
+Confusion Matrix:
+         Predicted
+         Normal  Attack
+Actual Normal: [True Negatives, False Positives]
+Actual Attack: [False Negatives, True Positives]
+```
+
+## 📜 License
+This project is open-source and available under the MIT License.
