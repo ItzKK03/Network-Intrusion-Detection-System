@@ -52,6 +52,8 @@ Execute the Python script to run data preparation, model training, and performan
 ```bash
 python nids_model.py
 ```
+---
+
 ## 📈 Evaluation & Results
 When executed, the system outputs a comprehensive cryptographic traffic analysis evaluation block:
 
@@ -61,6 +63,8 @@ You can toggle the `use_kdd_test_file` boolean variable at the top of the file t
 `use_kdd_test_file = False` (Default): Splits training data into an 80% train / 20% validation split with class stratification to ensure clean distribution.
 
 `use_kdd_test_file = True`: Fits entirely on the training file and benchmarks performance against completely unknown attack types in the test text file.
+
+---
 
 ## Sample Output Metrics
 ```
@@ -80,6 +84,8 @@ Confusion Matrix:
 Actual Normal: [True Negatives, False Positives]
 Actual Attack: [False Negatives, True Positives]
 ```
+
+---
 
 ## 📜 License
 This project is open-source and available under the MIT License.
